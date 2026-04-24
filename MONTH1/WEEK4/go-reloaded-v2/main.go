@@ -25,6 +25,15 @@ func main() {
 
 	// HEX TRANSFORMATION
 	transformedHex := ParseHex(inputContent)
-	fmt.Println(transformedHex)
+
+	// BIN TRANSFORMATION
+	transformedBin := ParseBin(transformedHex)
+
+	// OCT TRANSFORMATION
+	tranformedOct := ParseOct(transformedBin)
+
+	// UP TRANFORMATION
+	tranformedUp := ParseUp(tranformedOct)
+	fmt.Println(tranformedUp)
 
 }
