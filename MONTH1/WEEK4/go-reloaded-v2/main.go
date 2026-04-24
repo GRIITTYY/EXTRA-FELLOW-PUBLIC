@@ -9,12 +9,22 @@ func main() {
 	// Retrieve all arguments from the command line
 	args := os.Args
 
-	inputFileName, outputFileName, err := parseArgs(args)
+	// Getting Input and Output Filename
+	inputFileName, _, err := parseArgs(args)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	fmt.Println(inputFileName, outputFileName)
+	// Read the content of the Input Filename
+	inputContent, err := getFileContent(inputFileName)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	// HEX TRANSFORMATION
+	transformedHex := ParseHex(inputContent)
+	fmt.Println(transformedHex)
 
 }
